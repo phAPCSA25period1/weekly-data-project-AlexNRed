@@ -14,12 +14,38 @@ public class App {
         // -------------------------------------------------------------
         // TODO 1: Create a Scanner for user input
         // -------------------------------------------------------------
-
+        boolean isRunning = true;
+        Scanner scan = new Scanner(System.in);
+        int[] weekData = new int[7];
 
         // -------------------------------------------------------------
         // TODO 2: Give information about your program
         //         Ask the user about their goals (if applicable)
         // -------------------------------------------------------------
+        System.out.println("Welcome to the Weekly Screen Time Tracker");
+        System.out.println("This program will help you track your daily screen time for a week.");
+        System.out.println("What is a reasonable daily screen time goal for you (in hours: ex. 1,2,3)?");
+        int dailyGoal = scan.nextInt();
+
+        while isRunning {
+            for (int i = 0; i < weekData.length; i++){
+                System.out.println("Enter your screen time for the day " + (i + 1) + " (in hours: ex. 1,2,3):");
+                int dailyScreenTime = scan.nextInt();
+
+                if (!(dailyScreenTime instanceof Integer)){
+                    System.out.println("Invalid input. Please enter a integer value for screen time.")
+                }   
+
+                while (dailyScreenTime < 0) {
+                    System.out.println("Invalid input. You can not have a negative screen time.");
+                    System.out.println("Please enter a valid screen time for day " + (i + 1) + ":");
+                    dailyScreenTime = scan.nextInt();
+                }
+                weekData[i] = dailyScreenTime;
+            }
+        }
+
+
 
 
         // -------------------------------------------------------------
