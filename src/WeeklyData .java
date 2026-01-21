@@ -12,7 +12,7 @@ public class WeeklyData {
     //       Choose an appropriate type (double[] or int[])
     //       Create other instance variables as necessary
 
-    private double[] data;
+    private int[] data;
     private int length;
 
 
@@ -26,7 +26,7 @@ public class WeeklyData {
      *
      * @param input an array representing 7 days of data
      */
-    public WeeklyData(double[] input) {
+    public WeeklyData(int[] input) {
         // TODO: (Optional) Check if input is null and handle appropriately
         // TODO: Create a new array with the same length as input
         // TODO: Copy each value from input into the internal data array
@@ -69,8 +69,8 @@ public class WeeklyData {
      *         or 0.0 if the array is empty
      */
     public double getAverage() {
-        int sum = getTotal();
-        double average = (double)sum / data.length;
+        double sum = getTotal();
+        double average = sum / data.length;
         // TODO: If the array length is 0, return 0.0
         // TODO: Otherwise, divide the total by the number of elements
         // Hint: You may call getTotal()
