@@ -112,25 +112,26 @@ public class App {
                     dailyScreenTime = scan.nextInt();
                 }
                 dailyData[i] = dailyScreenTime;
-                displayResults(weekData, weeklyGoal);
             }
         }  
         // Create the WeeklyData object with the collected data
         WeeklyData weekData = new WeeklyData(dailyData);
 
         // Display the results
-        public void displayResults(WeeklyData weekData , int weeklyGoal) {
-            System.out.println("Here is your screen time data for the week:");
-            System.out.println(weekData.toString());
-            System.out.println("Total screen time for the week: " + weekData.getTotal() + " hours");
-            System.out.println("Average daily screen time: " + weekData.getAverage() + " hours");
-            System.out.println("Maximum screen time in a day: " + weekData.getMax() + " hours");
-            System.out.println("Minimum screen time in a day: " + weekData.getMin() + " hours");
-            System.out.println("Your weekly screen time goal was: " + weeklyGoal + " hours");
-            System.out.println("Did you meet your goal: " + weekData.completeGoal(weeklyGoal));
-        }
+        displayResults(weekData, weeklyGoal);
 
         // Close scanner and exit
         scan.close();
+    }
+
+    public static void displayResults(WeeklyData weekData, int weeklyGoal) {
+        System.out.println("Here is your screen time data for the week:");
+        System.out.println(weekData.toString());
+        System.out.println("Total screen time for the week: " + weekData.getTotal() + " hours");
+        System.out.println("Average daily screen time: " + weekData.getAverage() + " hours");
+        System.out.println("Maximum screen time in a day: " + weekData.getMax() + " hours");
+        System.out.println("Minimum screen time in a day: " + weekData.getMin() + " hours");
+        System.out.println("Your weekly screen time goal was: " + weeklyGoal + " hours");
+        System.out.println("Did you meet your goal: " + weekData.completeGoal(weeklyGoal));
     }
 }
