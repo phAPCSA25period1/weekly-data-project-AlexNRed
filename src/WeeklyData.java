@@ -1,9 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The WeeklyData class stores and analyzes a week’s worth of numeric data.
  * This could represent steps taken, hours of sleep, money spent, screen time,
  * or any other measurable daily value.
  */
 public class WeeklyData {
+    private List<Week> weeks;
+
+    public WeeklyData() {
+        weeks = new ArrayList<>();
+    }
+
+    public void addWeek(Week week) {
+        weeks.add(week);
+    }
+
+    public List<Week> getWeeks() {
+        return weeks;
+    }
 
     // -------------------------------------------------------------
     // Instance Variables
@@ -35,6 +51,16 @@ public class WeeklyData {
         this.data = new int[length];
         for (int i = 0; i < length; i++) {
             this.data[i] = (int) input[i];
+        }
+    }
+
+    public String compareWeeks(WeeklyData otherWeek) {
+        if (this.getTotal() > otherWeek.getTotal()) {
+            return "Current week has more total data.";
+        } else if (this.getTotal() < otherWeek.getTotal()) {
+            return "Other week has more total data.";
+        } else {
+            return "Both weeks have the same total data.";
         }
     }
 
@@ -154,5 +180,23 @@ public class WeeklyData {
         // TODO: Append each value with a day label (Day 1, Day 2, etc.)
         // TODO: Return the completed String
         return sb.toString(); // replace with your formatted output
+    }
+}
+
+class Week {
+    private int weekNumber;
+    private double data; // Example metric, can be modified as needed
+
+    public Week(int weekNumber, double data) {
+        this.weekNumber = weekNumber;
+        this.data = data;
+    }
+
+    public int getWeekNumber() {
+        return weekNumber;
+    }
+
+    public double getData() {
+        return data;
     }
 }
