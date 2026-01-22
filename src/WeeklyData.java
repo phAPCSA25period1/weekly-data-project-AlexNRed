@@ -39,6 +39,14 @@ public class WeeklyData {
     }
 
 
+    public boolean completeGoal(int goal) {
+        if (getTotal() <= goal) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // -------------------------------------------------------------
     // getTotal
     // -------------------------------------------------------------
@@ -137,10 +145,14 @@ public class WeeklyData {
      */
     @Override
     public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < data.length; i++) {
+            sb.append("Day ").append(i + 1).append(": ").append(data[i]).append("\n");
+        }
         // TODO: Create a StringBuilder
         // TODO: Loop through the data array
         // TODO: Append each value with a day label (Day 1, Day 2, etc.)
         // TODO: Return the completed String
-        return ""; // replace with your formatted output
+        return sb.toString(); // replace with your formatted output
     }
 }
