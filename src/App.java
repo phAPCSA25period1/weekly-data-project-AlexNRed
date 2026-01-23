@@ -13,16 +13,10 @@ public class App {
 
     public static void main(String[] args) {
 
-        // -------------------------------------------------------------
-        // TODO 1: Create a Scanner for user input
-        // -------------------------------------------------------------
-        
+       
         Scanner scan = new Scanner(System.in);
 
-        // -------------------------------------------------------------
-        // TODO 2: Give information about your program
-        //         Ask the user about their goals (if applicable)
-        // -------------------------------------------------------------
+
         System.out.println("Welcome to the Weekly Screen Time Tracker");
     
         System.out.println("This program will help you track your daily screen time for a week.");
