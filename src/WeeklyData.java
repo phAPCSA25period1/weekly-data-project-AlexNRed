@@ -39,11 +39,21 @@ public class WeeklyData {
     }
 
 
-    public boolean completeGoal(int goal) {
-        if (getTotal() <= goal) {
-            return true;
+    public void meetsGoal(int goal) {
+        int count = 0;
+
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] < goal) {
+                count++;
+            }
+        }
+        
+        System.out.println("Number of days met the goal: " + count);
+
+        if (count <= 4) {
+            System.out.println("Try to lessen your screen Time!");
         } else {
-            return false;
+            System.out.println("Great job on meeting your screen time goal!");
         }
     }
 

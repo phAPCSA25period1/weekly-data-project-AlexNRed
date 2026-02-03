@@ -24,8 +24,8 @@ public class App {
         System.out.println("Welcome to the Weekly Screen Time Tracker");
         
         System.out.println("This program will help you track your daily screen time for a week.");
-        System.out.println("What is a reasonable Weekly screen time goal for you (in hours: ex. 5, 10, 15)?");
-        int weeklyGoal = scan.nextInt();
+        System.out.println("What is a reasonable Daily screen time goal for you (in hours: ex. 1, 3, 5)?");
+        int dailyGoal = scan.nextInt();
 
         // Collect data for the week
         int[] dailyData = new int[7];
@@ -52,8 +52,9 @@ public class App {
         System.out.println("Average daily screen time: " + weekData.getAverage() + " hours");
         System.out.println("Maximum screen time in a day: " + weekData.getMax() + " hours");
         System.out.println("Minimum screen time in a day: " + weekData.getMin() + " hours");
-        System.out.println("Your weekly screen time goal was: " + weeklyGoal + " hours");
-        System.out.println("Did you meet your goal: " + weekData.completeGoal(weeklyGoal));
+        System.out.println("Your daily screen time goal was: " + dailyGoal + " hours");
+        weekData.meetsGoal(dailyGoal);
+        
 
         // Close scanner and exit
         scan.close();
